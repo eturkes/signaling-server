@@ -83,7 +83,7 @@ export default function App() {
         <h1 className="text-4xl font-bold text-white tracking-tight">
           P2P Beam
         </h1>
-        <p className="mt-2 text-gray-400 text-sm">
+        <p className="mt-2 text-stone-400 text-sm">
           Send files directly between browsers. No upload, no storage.
         </p>
       </header>

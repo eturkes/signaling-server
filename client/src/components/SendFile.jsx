@@ -20,13 +20,13 @@ export default function SendFile({ roomCode, file, onCancel }) {
   };
 
   return (
-    <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 text-center">
+    <div className="rounded-2xl border border-stone-800 bg-stone-900/60 p-8 text-center">
       <h2 className="text-xl font-semibold text-white mb-6">
         Waiting for receiver...
       </h2>
 
       {/* ---- Room code ---- */}
-      <p className="text-gray-400 text-sm mb-3">
+      <p className="text-stone-400 text-sm mb-3">
         Share this code with the receiver:
       </p>
 
@@ -37,7 +37,7 @@ export default function SendFile({ roomCode, file, onCancel }) {
               key={i}
               className="
                 inline-flex items-center justify-center w-12 h-14
-                rounded-lg bg-gray-800 border border-gray-700
+                rounded-lg bg-stone-800 border border-stone-700
                 text-2xl font-mono font-bold text-white
               "
             >
@@ -49,8 +49,8 @@ export default function SendFile({ roomCode, file, onCancel }) {
         <button
           onClick={handleCopy}
           className="
-            rounded-lg bg-gray-800 border border-gray-700 px-3 py-2
-            text-sm text-gray-300 hover:bg-gray-700 transition-colors
+            rounded-lg bg-stone-800 border border-stone-700 px-3 py-2
+            text-sm text-stone-300 hover:bg-stone-700 transition-colors
           "
         >
           {copied ? "Copied!" : "Copy"}
@@ -59,21 +59,21 @@ export default function SendFile({ roomCode, file, onCancel }) {
 
       {/* ---- Waiting dots ---- */}
       <div className="flex justify-center gap-1.5 mb-6">
-        <span className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce [animation-delay:0ms]" />
-        <span className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce [animation-delay:150ms]" />
-        <span className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce [animation-delay:300ms]" />
+        <span className="w-2 h-2 rounded-full bg-orange-400 animate-bounce [animation-delay:0ms]" />
+        <span className="w-2 h-2 rounded-full bg-orange-400 animate-bounce [animation-delay:150ms]" />
+        <span className="w-2 h-2 rounded-full bg-orange-400 animate-bounce [animation-delay:300ms]" />
       </div>
 
       {/* ---- File info ---- */}
       {file && (
-        <div className="rounded-lg bg-gray-800/50 px-4 py-3 mb-6 inline-flex items-center gap-3">
+        <div className="rounded-lg bg-stone-800/50 px-4 py-3 mb-6 inline-flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="h-6 w-6 text-gray-400 shrink-0"
+            className="h-6 w-6 text-stone-400 shrink-0"
           >
             <path
               strokeLinecap="round"
@@ -85,7 +85,7 @@ export default function SendFile({ roomCode, file, onCancel }) {
             <p className="text-sm font-medium text-white truncate max-w-xs">
               {file.name}
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-stone-400">
               {formatFileSize(file.size)}
             </p>
           </div>
@@ -96,8 +96,8 @@ export default function SendFile({ roomCode, file, onCancel }) {
         <button
           onClick={onCancel}
           className="
-            rounded-lg border border-gray-700 px-6 py-2
-            text-sm text-gray-300 hover:bg-gray-800 transition-colors
+            rounded-lg border border-stone-700 px-6 py-2
+            text-sm text-stone-300 hover:bg-stone-800 transition-colors
           "
         >
           Cancel

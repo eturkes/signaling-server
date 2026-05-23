@@ -149,14 +149,14 @@ export default function Transfer({
   // -----------------------------------------------------------------------
   if (isFailed) {
     return (
-      <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 text-center">
-        <XCircleIcon className="mx-auto h-12 w-12 text-red-400 mb-4" />
+      <div className="rounded-2xl border border-stone-800 bg-stone-900/60 p-8 text-center">
+        <XCircleIcon className="mx-auto h-12 w-12 text-rose-400 mb-4" />
         <h2 className="text-xl font-semibold text-white mb-2">
           {transfer.transferState === "error"
             ? "Transfer Failed"
             : "Connection Failed"}
         </h2>
-        <p className="text-gray-400 text-sm mb-6">{errorMessage}</p>
+        <p className="text-stone-400 text-sm mb-6">{errorMessage}</p>
         <button onClick={onDisconnect} className={btnClass}>
           Disconnect
         </button>
@@ -169,14 +169,14 @@ export default function Transfer({
   // -----------------------------------------------------------------------
   if (!isTransferring && !isComplete) {
     return (
-      <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 text-center">
-        <div className="mx-auto h-12 w-12 rounded-full border-4 border-gray-700 border-t-indigo-400 animate-spin mb-4" />
+      <div className="rounded-2xl border border-stone-800 bg-stone-900/60 p-8 text-center">
+        <div className="mx-auto h-12 w-12 rounded-full border-4 border-stone-700 border-t-orange-400 animate-spin mb-4" />
         <h2 className="text-xl font-semibold text-white mb-2">
           {phase === "connecting"
             ? "Establishing connection..."
             : "Starting transfer..."}
         </h2>
-        <p className="text-gray-400 text-sm mb-1">
+        <p className="text-stone-400 text-sm mb-1">
           {phase === "connecting"
             ? "Negotiating a direct peer-to-peer link..."
             : role === "sender"
@@ -184,7 +184,7 @@ export default function Transfer({
               : "Waiting for file metadata..."}
         </p>
         {phase === "connecting" && (
-          <p className="text-gray-600 text-xs mb-6">
+          <p className="text-stone-600 text-xs mb-6">
             RTC state: {rtcState}
           </p>
         )}
@@ -210,7 +210,7 @@ export default function Transfer({
     );
 
     return (
-      <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 text-center">
+      <div className="rounded-2xl border border-stone-800 bg-stone-900/60 p-8 text-center">
         <h2 className="text-xl font-semibold text-white mb-4">
           {role === "sender" ? "Sending file..." : "Receiving file..."}
         </h2>
@@ -218,15 +218,15 @@ export default function Transfer({
         <FileInfo name={displayName} size={displayTotal} />
 
         {/* Progress bar */}
-        <div className="w-full bg-gray-800 rounded-full h-3 mb-3 overflow-hidden">
+        <div className="w-full bg-stone-800 rounded-full h-3 mb-3 overflow-hidden">
           <div
-            className="bg-indigo-500 h-3 rounded-full transition-[width] duration-150 ease-linear"
+            className="bg-orange-500 h-3 rounded-full transition-[width] duration-150 ease-linear"
             style={{ width: percent + "%" }}
           />
         </div>
 
         {/* Stats row */}
-        <div className="flex items-center justify-between text-xs text-gray-400 mb-6">
+        <div className="flex items-center justify-between text-xs text-stone-400 mb-6">
           <span>
             {formatFileSize(transfer.bytesTransferred)} /{" "}
             {formatFileSize(displayTotal)}
@@ -234,11 +234,11 @@ export default function Transfer({
           <span>{percent.toFixed(1)}%</span>
         </div>
 
-        <div className="flex items-center justify-center gap-4 text-xs text-gray-500 mb-6">
+        <div className="flex items-center justify-center gap-4 text-xs text-stone-500 mb-6">
           {transfer.speed > 0 && <span>{formatSpeed(transfer.speed)}</span>}
           {transfer.speed > 0 && eta && (
             <>
-              <span className="text-gray-700">|</span>
+              <span className="text-stone-700">|</span>
               <span>{eta}</span>
             </>
           )}
@@ -260,24 +260,24 @@ export default function Transfer({
       : 0;
 
   return (
-    <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 text-center">
-      <CheckCircleIcon className="mx-auto h-12 w-12 text-emerald-400 mb-4" />
+    <div className="rounded-2xl border border-stone-800 bg-stone-900/60 p-8 text-center">
+      <CheckCircleIcon className="mx-auto h-12 w-12 text-teal-400 mb-4" />
       <h2 className="text-xl font-semibold text-white mb-2">
         Transfer Complete!
       </h2>
-      <p className="text-gray-400 text-sm mb-6">
+      <p className="text-stone-400 text-sm mb-6">
         {role === "sender"
           ? `${displayName} was sent successfully.`
           : `${displayName} has been saved.`}
       </p>
 
       {/* Full progress bar */}
-      <div className="w-full bg-gray-800 rounded-full h-3 mb-3 overflow-hidden">
-        <div className="bg-emerald-500 h-3 rounded-full w-full" />
+      <div className="w-full bg-stone-800 rounded-full h-3 mb-3 overflow-hidden">
+        <div className="bg-teal-500 h-3 rounded-full w-full" />
       </div>
 
       {/* Summary stats */}
-      <p className="text-xs text-gray-500 mb-6">
+      <p className="text-xs text-stone-500 mb-6">
         {formatFileSize(displayTotal)} transferred
         {duration > 0 && (
           <> in {formatDuration(duration)} ({formatSpeed(transfer.speed)})</>
@@ -290,8 +290,8 @@ export default function Transfer({
           href={transfer.downloadUrl}
           download={displayName}
           className="
-            inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2
-            text-sm font-medium text-white hover:bg-indigo-500 transition-colors mb-4
+            inline-flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-2
+            text-sm font-medium text-white hover:bg-orange-500 transition-colors mb-4
           "
         >
           <ArrowDownTrayIcon className="h-4 w-4" />
@@ -313,17 +313,17 @@ export default function Transfer({
 // ---------------------------------------------------------------------------
 
 const btnClass =
-  "rounded-lg border border-gray-700 px-6 py-2 text-sm text-gray-300 hover:bg-gray-800 transition-colors";
+  "rounded-lg border border-stone-700 px-6 py-2 text-sm text-stone-300 hover:bg-stone-800 transition-colors";
 
 function FileInfo({ name, size }) {
   return (
-    <div className="rounded-lg bg-gray-800/50 px-4 py-3 mb-6 inline-flex items-center gap-3">
-      <FileIcon className="h-6 w-6 text-gray-400 shrink-0" />
+    <div className="rounded-lg bg-stone-800/50 px-4 py-3 mb-6 inline-flex items-center gap-3">
+      <FileIcon className="h-6 w-6 text-stone-400 shrink-0" />
       <div className="text-left">
         <p className="text-sm font-medium text-white truncate max-w-xs">
           {name}
         </p>
-        <p className="text-xs text-gray-400">{formatFileSize(size)}</p>
+        <p className="text-xs text-stone-400">{formatFileSize(size)}</p>
       </div>
     </div>
   );

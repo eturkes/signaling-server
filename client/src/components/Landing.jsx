@@ -109,8 +109,8 @@ export default function Landing({ onFileSelected, onJoinRoom, error }) {
           transition-colors cursor-pointer select-none
           ${
             isDragging
-              ? "border-indigo-400 bg-indigo-500/10"
-              : "border-gray-700 bg-gray-900/60 hover:border-gray-500"
+              ? "border-orange-400 bg-orange-500/10"
+              : "border-stone-700 bg-stone-900/60 hover:border-stone-500"
           }
         `}
         onDragEnter={handleDragEnter}
@@ -126,9 +126,9 @@ export default function Landing({ onFileSelected, onJoinRoom, error }) {
           onChange={handleFileInput}
         />
 
-        <UploadIcon className="mx-auto h-12 w-12 text-gray-500 mb-4" />
+        <UploadIcon className="mx-auto h-12 w-12 text-stone-500 mb-4" />
         <h2 className="text-xl font-semibold text-white mb-2">Send a File</h2>
-        <p className="text-gray-400 text-sm">
+        <p className="text-stone-400 text-sm">
           {isDragging
             ? "Drop to select"
             : "Drag & drop a file here, or click to browse"}
@@ -136,12 +136,12 @@ export default function Landing({ onFileSelected, onJoinRoom, error }) {
       </div>
 
       {/* ---- Receive a File ---- */}
-      <div className="rounded-2xl border border-gray-800 bg-gray-900/60 p-8 text-center">
-        <DownloadIcon className="mx-auto h-12 w-12 text-gray-500 mb-4" />
+      <div className="rounded-2xl border border-stone-800 bg-stone-900/60 p-8 text-center">
+        <DownloadIcon className="mx-auto h-12 w-12 text-stone-500 mb-4" />
         <h2 className="text-xl font-semibold text-white mb-4">
           Receive a File
         </h2>
-        <p className="text-gray-400 text-sm mb-4">
+        <p className="text-stone-400 text-sm mb-4">
           Enter the 6-digit code from the sender
         </p>
 
@@ -154,9 +154,9 @@ export default function Landing({ onFileSelected, onJoinRoom, error }) {
           onKeyDown={handleKeyDown}
           placeholder="000000"
           className="
-            w-full rounded-lg bg-gray-800 border border-gray-700 px-4 py-3
+            w-full rounded-lg bg-stone-800 border border-stone-700 px-4 py-3
             text-center text-2xl font-mono tracking-[0.3em] text-white
-            placeholder:text-gray-600 focus:outline-none focus:border-indigo-500
+            placeholder:text-stone-600 focus:outline-none focus:border-orange-500
             transition-colors
           "
         />
@@ -165,15 +165,15 @@ export default function Landing({ onFileSelected, onJoinRoom, error }) {
           onClick={handleJoin}
           disabled={roomCode.length !== 6 || joining}
           className="
-            mt-4 w-full rounded-lg bg-indigo-600 px-4 py-3 font-medium
-            text-white hover:bg-indigo-500 transition-colors
+            mt-4 w-full rounded-lg bg-orange-600 px-4 py-3 font-medium
+            text-white hover:bg-orange-500 transition-colors
             disabled:opacity-40 disabled:cursor-not-allowed
           "
         >
           {joining ? "Connecting..." : "Connect"}
         </button>
 
-        {error && <p className="mt-3 text-sm text-red-400">{error}</p>}
+        {error && <p className="mt-3 text-sm text-rose-400">{error}</p>}
       </div>
     </div>
   );
